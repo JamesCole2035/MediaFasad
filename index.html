@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Fasad</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            
+            <nav class="menu">
+                <div class="header__logo">
+                    <div class="logo__block">
+                        <div class="logo__text"><p>Media</p><p>Fasad</p></div>
+                    </div>           
+                </div>
+                <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
+                <li class="menu__item"><a href="./about.html" class="menu__link">About</a></li>
+                <li class="menu__item"><a href="./content.html" class="menu__link">Content</a></li>
+                <li class="menu__item"><a href="./contacts.html" class="menu__link">Contacts</a></li>
+            </nav>
+        </header>        
+
+        <main class="content">
+
+            <div class="banner">
+                <p class="banner__text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.
+                </p> 
+                <div class="banner__border_wide" id="banner-border-wide"></div>
+                <div class="banner__border_narrow" id="banner-border-narrow"></div>
+            </div>    
+
+            <div class="banner__photo">
+                <div class="banner__border_photo" id="banner-border-photo"></div>
+                <img class="photo" src="./static/img/desc.png" alt="work desc"/>
+            </div>            
+
+            <div class="logo">
+                <p class="white">MEDIA</p>   
+                <p class="brown">FASAD</p>
+                <div class="squareOne" id="square-one"></div>
+                <div class="squareTwo" id="square-two"></div>
+            </div>
+
+            <div class="author">
+                <div class="author__photo" id="author-photo">
+                    <img src="./static/img/photo.png" alt="photo of Joe Mohnil"/>      
+                </div>      
+                <div class="author__border_photo" id="author-border-photo"></div>
+                <h2 class="author__name">Joe Mohnil</h2>
+                <p class="author__quote">“Is simply dummy text of the printing and typesetting” </p>
+            </div>
+
+            <div class="form">
+                <h2 class="form__title">REGISTRATION</h2>
+                <form action="">                        
+                    <input type="text" name="email" id="email" placeholder="EMAIL" class="form__input">
+                    <input type="text" name="name" id="name" placeholder="NAME" class="form__input">
+                    <input type="text" name="message" id="message" placeholder="MESSAGE" class="form__input">
+                    <button class="form__button" name="button" id="button">SEND</button>
+                </form>  
+            </div>           
+           
+        </main>
+
+        <footer class="footer">
+            <p class="footer__year">2020</p>
+        </footer> 
+    </div>       
+</body>
+<script src="./static/js/script.js"></script>
+</html>
