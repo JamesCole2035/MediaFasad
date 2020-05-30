@@ -32,7 +32,7 @@ body {
 .header { 
     display: flex;
     flex: 0 0 auto;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     height: auto;
@@ -88,7 +88,7 @@ body {
     padding-left: 16px;
 }
 .menu {
-    width: auto;
+    max-width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -101,10 +101,10 @@ body {
     margin-left: 23px;
     margin-top: 52px;
 }
-.menu__item:nth-child(3) {
+.menu__item:nth-child(2) {
     margin-left: 83px;
 }
-.menu__item:nth-child(4) {
+.menu__item:nth-child(3) {
     margin-left: 83px;
 }
 .menu__item:last-child {
@@ -121,6 +121,136 @@ body {
 }
 .menu__item:hover .menu__link {
     border-bottom: 1px solid white;
+}
+/* мобильное меню */
+.nav-mobile {
+	display: none;
+	position: absolute;
+    right: 0;
+    top: 20px; /*10%*/
+    background: none;
+    margin: auto auto;
+	height: 80px;
+	width: 75px;
+}
+#nav-toggle {	
+	position: absolute;
+	left: 20px;
+	top: 27px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+} 
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+/*.menu-show {
+    width: 24%;    
+    padding-left: 19%;    
+}*/
+
+.menu-show {
+    position: absolute;
+    top: 100px;
+    right: 2px;
+    z-index: 25;
+    width: 150px;
+    height: 118px;    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: #3d3d3d;
+    border: 1px solid #BDBDBD; 
+}
+.in {
+    animation-name: moveLeft; 
+    -webkit-animation-name: moveLeft; 	
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+
+	animation: moveLeft 1s ease-in-out;	
+	-webkit-animation: moveLeft 1s ease-in-out;	
+}
+.out {
+	animation-name: moveRight; 
+    -webkit-animation-name: moveRight;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+		
+	animation: moveRight 1s ease-in-out;
+	-webkit-animation: moveRight 1s ease-in-out;
+}
+/*-webkit-transition-duration: 1s;
+-o-transition-duration: 1s;
+-moz-transition-duration: 1s;
+    transition: all 1s linear;
+	-webkit-transition: all 1s linear;*/
+.menu-show .menu__item {
+    width: auto;
+    height: 17px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+@keyframes moveRight{
+    0%{
+    opacity: 1;
+    -webkit-transform:translateX(2px);
+    -ms-transform:translateX(2px);
+    transform:translateX(2px);
+    }
+    100%{
+    opacity: 1;
+    -webkit-transform:translateX(152px);
+    -ms-transform:translateX(152px);
+    transform:translateX(152px);    
+    }
+}
+@keyframes moveLeft{
+    0%{
+    opacity: 1;
+    -webkit-transform:translateX(152px);
+    -ms-transform:translateX(152px);
+    transform:translateX(152px); 
+    }
+    100%{
+    opacity: 1;
+    -webkit-transform:translateX(2px);
+    -ms-transform:translateX(2px);
+    transform:translateX(2px);   
+    }
 }
 /* фон сайта */
 .logo {
@@ -202,6 +332,7 @@ body {
     box-sizing: border-box;
 }
 .banner__photo {
+    display: block;
     position: absolute;
     margin-left: 938px;    
     margin-top: 82px;
@@ -220,6 +351,7 @@ body {
     z-index: 7;
 }
 .author {
+    display: block;
     position: absolute;
     margin-left: 0;
     margin-top: 0px;
@@ -310,8 +442,126 @@ form {
     justify-content: center;
 }
 .footer__year {
-    width: 49px;
+    width: 40px;
     height: 25px;
     line-height: 25px;
     margin: 20px auto;
 }
+@media screen and (max-width: 1280px) { 
+    .form {
+        margin-left: 760px; 
+        margin-top: 305px;
+    }
+    .banner__photo {
+        margin-left: 812px;    
+        margin-top: 82px;
+    }
+    .banner__border_photo {
+        margin-left: -32px;
+    }
+    .brown {
+        margin-left: 340px; /*так красивее - в макете меньше - 470-471*/
+    }
+}
+@media screen and (max-width: 1024px) { 
+    .menu__item {
+        margin-left: 17px;
+    }
+    .menu__item:nth-child(2) {
+        margin-left: 62px;
+    }
+    .menu__item:nth-child(3) {
+        margin-left: 62px;
+    }
+    .menu__item:last-child {
+        margin-left: 71px;
+    }
+}
+@media screen and (max-width: 768px) { 
+    .header__logo {
+        width: 117px;    
+    } 
+    .logo__block {
+        width: 72px;
+        margin: 34px 29px;   /*31.5*/ 
+    }
+    .menu__item {
+        margin-left: 10.5%; /*1.2*/
+    }
+    .menu__item:nth-child(2) {
+        margin-left: 8.5%;
+    }
+    .menu__item:nth-child(3) {
+        margin-left: 8.5%;
+    }
+    .menu__item:last-child {
+        margin-left: 9.5%;
+    }
+    .white {
+        width: 470px;
+        margin-left: calc((100% - 470px)/2);
+    }
+    .brown {
+        width: 470px;
+        margin-left: calc((100% - 470px)/2); /*так красивее - в макете меньше - 470-471*/
+        margin-top: -43px;  
+    }
+    .logo {
+        z-index: 0;
+    }
+    .squareOne {
+        margin-left: 146px;
+        margin-top: 44px;
+    }
+    .squareTwo {
+        margin-left: 247px;
+        margin-top: 129px;    
+    }
+}    
+@media screen and (max-width: 600px) { 
+    .menu { 
+        display: none !important;
+    } 
+    .nav-mobile {
+        display: block !important;
+    }
+    .banner__photo {
+        display: none;
+    }
+    .form {
+        margin-left: calc((100% - 500px)/2); 
+        margin-top: 500px;
+    } 
+    .squareOne {
+        margin-left: 62px;
+        margin-top: 44px;
+    }
+    .squareTwo {
+        margin-left: 163px;
+        margin-top: 129px;    
+    }   
+} 
+@media screen and (max-width: 480px) {
+    .form {
+        margin-left: calc((100% - 450px)/2); 
+        margin-top: 710px;
+        width: 450px;
+    }  
+    .content {
+       }
+    .author {
+        margin-top: -40px;
+    }
+    .squareOne {
+        margin-left: 12px;
+        margin-top: 44px;
+    }
+    .squareTwo {
+        margin-left: 113px;
+        margin-top: 129px;    
+    }  
+    
+}  
+@media screen and (max-width: 320px) {
+
+}    
