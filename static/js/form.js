@@ -22,4 +22,4 @@ button.addEventListener("click", () => {
  });
 
  
-console.log(window.Storage.listOfMessages);
+console.log(window.listOfMessages);

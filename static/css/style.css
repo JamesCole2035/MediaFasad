@@ -88,7 +88,7 @@ body {
     padding-left: 16px;
 }
 .menu {
-    max-width: 50%;
+    max-width: 75%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -331,16 +331,18 @@ body {
     border: 6px solid #FFFFFF;
     box-sizing: border-box;
 }
-.banner__photo {
+.image {
     display: block;
     position: absolute;
     margin-left: 938px;    
-    margin-top: 82px;
-    width: 446px;
-    height: 634px;
+    margin-top: 82px;    
     z-index: 7;
 }
-.banner__border_photo {
+.image__photo {
+    width: 446px;
+    height: 634px;
+}
+.image__border {
     position: absolute;
     width: 408px;
     height: 625px;
@@ -447,23 +449,70 @@ form {
     line-height: 25px;
     margin: 20px auto;
 }
-@media screen and (max-width: 1280px) { 
-    .form {
-        margin-left: 760px; 
-        margin-top: 305px;
-    }
-    .banner__photo {
-        margin-left: 812px;    
-        margin-top: 82px;
-    }
-    .banner__border_photo {
-        margin-left: -32px;
-    }
+@media screen and (min-width: 1281px) and (max-width: 1440px){ 
     .brown {
-        margin-left: 340px; /*так красивее - в макете меньше - 470-471*/
+        margin-left: 340px; 
     }
 }
-@media screen and (max-width: 1024px) { 
+@media screen and (min-width: 1025px) and (max-width: 1440px) { 
+    .form {
+        margin-left: auto; 
+        right: 1%;
+    }
+    .image {
+        margin-left: auto;
+        right: 1%;
+        margin-top: 110px;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) { 
+    .image {
+        height: auto;
+        width: 300px;
+    }
+    .image__border {
+        height: 420px;
+        width: 275px;
+        margin-left: -22px;
+        margin-top: -27px;
+    }
+    .image__photo {
+        max-width: 300px;
+        height: auto;
+    }
+    .banner {
+        width: 625px;
+        margin-left: 84px; /* 85px */
+    }
+    .banner__border_narrow {
+        width: 618px;
+    }
+    .banner__border_wide {
+        width: 618px;
+    }
+    .author__quote {
+        margin-left: 10%; /* 48px; */  
+    }
+    .author__name {
+        margin-left: 10%;
+    }
+    .brown {
+        margin-left: calc((100% - 600px)/1.75); /* 19% */
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) { 
+    /*.image {
+        display: none;
+    }
+    .form {
+        position: absolute;
+        margin-left: 15%; 
+        margin-top: 700px;
+        width: 500px;
+        height: auto;
+        line-height: 120px;
+        z-index: 7;
+    }*/
     .menu__item {
         margin-left: 17px;
     }
@@ -478,6 +527,28 @@ form {
     }
 }
 @media screen and (max-width: 768px) { 
+    .white {
+        width: 470px;
+        margin-left: calc((100% - 470px)/2);
+    }
+    .brown {
+        width: 470px;
+        margin-left: calc((100% - 480px)/2); /*так красивее - в макете меньше - 470-471*/
+        margin-top: -43px;  
+    }
+    .logo {
+        z-index: 0;
+    }
+    .squareOne {
+        margin-left: 146px;
+        margin-top: 44px;
+    }
+    .squareTwo {
+        margin-left: 247px;
+        margin-top: 129px;    
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 768px) { 
     .header__logo {
         width: 117px;    
     } 
@@ -497,27 +568,7 @@ form {
     .menu__item:last-child {
         margin-left: 9.5%;
     }
-    .white {
-        width: 470px;
-        margin-left: calc((100% - 470px)/2);
-    }
-    .brown {
-        width: 470px;
-        margin-left: calc((100% - 470px)/2); /*так красивее - в макете меньше - 470-471*/
-        margin-top: -43px;  
-    }
-    .logo {
-        z-index: 0;
-    }
-    .squareOne {
-        margin-left: 146px;
-        margin-top: 44px;
-    }
-    .squareTwo {
-        margin-left: 247px;
-        margin-top: 129px;    
-    }
-}    
+}   
 @media screen and (max-width: 600px) { 
     .menu { 
         display: none !important;
@@ -525,7 +576,10 @@ form {
     .nav-mobile {
         display: block !important;
     }
-    .banner__photo {
+    .menu__item {
+        margin-left: 20px;
+    }
+    .image {
         display: none;
     }
     .form {
